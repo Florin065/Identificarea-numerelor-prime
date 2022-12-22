@@ -5,7 +5,7 @@
 
 # First, set up variables
 OUT_DIR="outFermat"
-REF_DIR="ref"
+REF_DIR="out"
 TOTAL_COUNT=0
 CORRECT_COUNT=0
 

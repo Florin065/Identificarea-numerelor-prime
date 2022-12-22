@@ -9,6 +9,9 @@
 #include <sys/time.h>
 #include <sys/resource.h>
 
+double memorie = 0;
+double timp = 0;
+
 // Utility function to do modular exponentiation.
 // It returns (x^y) % p
 int power(int x, size_t y, int p)
@@ -165,6 +168,8 @@ int main() {
             getrusage(RUSAGE_SELF, &usage);
             double memoryInKilobytes = (double)usage.ru_maxrss / 1024;
             
+            memorie += memoryInKilobytes;
+            timp += timeInMilliseconds;
             // Print the time and memory used
             printf(inFileName);
             printf("Time: %fms\n", timeInMilliseconds);
@@ -190,6 +195,13 @@ int main() {
     
     // Close the directory
     closedir(inDir);
+
+    timp /= 20;
+    memorie /= 20;
+    printf("medie timp executare: %fms\n", timp);
+    printf("medie memorie consumată %fkB\n", memorie);
+    
+
     
     return 0;
 }

@@ -91,7 +91,7 @@ bool isPrime(int n, int k)
  
     // Iterate given number of 'k' times
     for (int i = 0; i < k; i++) {
-                 if (!millerTest(d, n)) {
+            if (!millerTest(d, n)) {
               return false;
          }
     }

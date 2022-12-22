@@ -9,30 +9,35 @@
 #include <sys/time.h>
 #include <sys/resource.h>
 
+double memorie = 0;
+double timp = 0;
+
+//This function calculates the modulo of a base and exponent, modulo a certain value.
 int modulo(int base, int exponent, int mod) {
-    int x = 1;
-    int y = base;
-    while (exponent > 0) {
-        if (exponent % 2 == 1)
-            x = (x * y) % mod;
-        y = (y * y) % mod;
-        exponent = exponent / 2;
+    int x = 1; //Initialize the result to 1
+    int y = base; //Set y to the base number
+    while (exponent > 0) { //Loop while the exponent is greater than 0
+        if (exponent % 2 == 1) //If the exponent is odd
+            x = (x * y) % mod; //Multiply x and y and modulo it with the given mod
+        y = (y * y) % mod; //Square y and modulo it with the given mod
+        exponent = exponent / 2; //Divide the exponent by 2
     }
-    return x % mod;
+    return x % mod; //Return x modulo the given mod
 }
- 
+
+//This function checks if a number is prime using the Miller-Rabin algorithm.
 bool isPrime(int n, int k) {
-    int i;
-    if (n == 1) {
+    int i; //Initialize a counter
+    if (n == 1) { //If the number is one, return false
         return false;
     }
-    for (i = 0; i < k; i++) {
-        int a = rand() % (n - 1) + 1;
-        if (modulo(a, n - 1, n) != 1) {
-            return false;
+    for (i = 0; i < k; i++) { //Loop k times
+        int a = rand() % (n - 1) + 1; //Generate a random number in the range of 1 to n-1
+        if (modulo(a, n - 1, n) != 1) { //If the modulo of a, n-1, and n is not 1
+            return false; //Return false
         }
     }
-    return true;
+    return true; //If the algorithm passes for k times, return true
 }
 
 int main() {
@@ -101,6 +106,9 @@ int main() {
             getrusage(RUSAGE_SELF, &usage);
             double memoryInKilobytes = (double)usage.ru_maxrss / 1024;
             
+            memorie += memoryInKilobytes;
+            timp += timeInMilliseconds;
+
             // Print the time and memory used
             printf(inFileName);
             printf("Time: %fms\n", timeInMilliseconds);
@@ -126,6 +134,11 @@ int main() {
     
     // Close the directory
     closedir(inDir);
+
+    timp /= 20;
+    memorie /= 20;
+    printf("medie timp executare: %fms\n", timp);
+    printf("medie memorie consumată %fkB\n", memorie);
     
     return 0;
 }

@@ -3,10 +3,13 @@ CFLAG = -o
 
 .PHONY: build
 build:
-	$(CC) Fermat.c $(CFLAG) Fermat
-	$(CC) Rabin.c $(CFLAG) Rabin
+	cat $(input) > "test.in"
 	$(CC) FermatTest.c $(CFLAG) FermatTest
 	$(CC) RabinTest.c $(CFLAG) RabinTest
+
+build-all:
+	$(CC) Fermat.c $(CFLAG) Fermat
+	$(CC) Rabin.c $(CFLAG) Rabin
 
 all: run-all-best run-all-p1 run-all-p2
 
