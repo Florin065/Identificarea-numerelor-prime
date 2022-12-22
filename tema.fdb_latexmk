@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1671650200 "/home/florin/Facultate/an 2/AA/tema/tema.tex" "tema.pdf" "tema" 1671650200
-  "/home/florin/Facultate/an 2/AA/tema/tema.tex" 1671650199 7438 818c6ca088e4f4e6c77cb9110e782449 ""
+["pdflatex"] 1671664055 "/home/florin/Facultate/an 2/AA/tema/tema.tex" "tema.pdf" "tema" 1671664055
+  "/home/florin/Facultate/an 2/AA/tema/tema.tex" 1671664054 7888 c5c33b07257b4110d070d602758449ad ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1650183167 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1650183167 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1650183167 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
@@ -83,8 +83,8 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1668515085 4278762 af3ac1370db81a450c1118eabf1fe718 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1668515079 2927662 29140854ef2554880634ac2f7bdc2e9c ""
   "llncs.cls" 1671556382 42249 b08ec23e994470d7d8fc268d245cf555 ""
-  "tema.aux" 1671650200 2782 e3b002a5efb1d1f365869ad20a253534 "pdflatex"
-  "tema.tex" 1671650199 7438 818c6ca088e4f4e6c77cb9110e782449 ""
+  "tema.aux" 1671664055 2782 455be5b877ef75adc51572be7555a4d3 "pdflatex"
+  "tema.tex" 1671664054 7888 c5c33b07257b4110d070d602758449ad ""
   (generated)
   "tema.aux"
   "tema.log"
